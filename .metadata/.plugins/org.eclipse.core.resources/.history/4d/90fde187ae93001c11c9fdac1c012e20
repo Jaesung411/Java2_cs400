@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Backend implements IShowSearcherBackend{
+	
+	List<IShow> shows = new ArrayList<IShow>();
+	String provider;
+	boolean filter;
+
+	@Override
+	public void addShow(IShow show) {
+		
+		shows.add(show);
+		
+	}
+
+	@Override
+	public int getNumberOfShows() {
+		
+		return shows.size();
+	}
+
+	@Override
+	public void setProviderFilter(String provider, boolean filter) {
+		
+		this.provider = provider;
+		this.filter = filter;
+		
+	}
+
+	@Override
+	public boolean getProviderFilter(String provider) {
+	
+		return false;
+	}
+
+	@Override
+	public void toggleProviderFilter(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<IShow> searchByTitleWord(String word) {
+		List<IShow> shows = new ArrayList<IShow>();
+		for(IShow i: this.shows) {
+			if(i.getTitle().contains(word)) {
+				shows.add(i);
+			}
+		}
+		
+		return shows;
+	}
+
+	@Override
+	public List<IShow> searchByYear(int year) {
+		List<IShow> shows = new ArrayList<IShow>();
+		for(IShow i: this.shows) {
+			if(i.getYear()==year) {
+				shows.add(i);
+			}
+		}
+		
+		return shows;
+	}
+
+}

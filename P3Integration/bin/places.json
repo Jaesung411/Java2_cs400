@@ -1,0 +1,236 @@
+[
+ {
+   "ID": "1",
+   "NAME": "Carson's Market",
+   "DINING": "Y",
+   "CONNECTIONS": "6,24",
+   "X": "2026.37",
+   "Y": "3516.31",
+   "Z": "871"
+ },
+ {
+   "ID": "2",
+   "NAME": "Four Lakes Market",
+   "DINING": "Y",
+   "CONNECTIONS": "8,12",
+   "X": "438.9",
+   "Y": "3474.55",
+   "Z": "861"
+ },
+ {
+   "ID": "3",
+   "NAME": "Gordon Avenue Market",
+   "DINING": "Y",
+   "CONNECTIONS": "18,26",
+   "X": "5385.6",
+   "Y": "1184.53",
+   "Z": "868"
+ },
+ {
+   "ID": "4",
+   "NAME": "Liz's Market",
+   "DINING": "Y",
+   "CONNECTIONS": "21,25",
+   "X": "3126.26",
+   "Y": "3208.42",
+   "Z": "936"
+ },
+ {
+   "ID": "5",
+   "NAME": "Rheta's Market",
+   "DINING": "Y",
+   "CONNECTIONS": "7,9",
+   "X": "4547.45",
+   "Y": "2066.22",
+   "Z": "879"
+ },
+ {
+   "ID": "6",
+   "NAME": "Adams Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "24",
+   "X": "1836.95",
+   "Y": "3516.31",
+   "Z": "867"
+ },
+ {
+   "ID": "7",
+   "NAME": "Barnard Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "5,9",
+   "X": "4315.21",
+   "Y": "2029.67",
+   "Z": "878"
+ },
+ {
+   "ID": "8",
+   "NAME": "Bradley Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "2,12",
+   "X": "738.24",
+   "Y": "3690.04",
+   "Z": "861"
+ },
+ {
+   "ID": "9",
+   "NAME": "Chadbourne Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "5,7,17",
+   "X": "4739.64",
+   "Y": "2029.67",
+   "Z": "879"
+ },
+ {
+   "ID": "10",
+   "NAME": "Cole Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "16",
+   "X": "980.82",
+   "Y": "3480.22",
+   "Z": "858"
+ },
+ {
+   "ID": "11",
+   "NAME": "Davis Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "20",
+   "X": "4558.01",
+   "Y": "1595.03",
+   "Z": "873"
+ },
+ {
+   "ID": "12",
+   "NAME": "Dejope Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "2,8,19",
+   "X": "237.58",
+   "Y": "3474.55",
+   "Z": "861"
+ },
+ {
+   "ID": "13",
+   "NAME": "Humphrey Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "14",
+   "X": "1516.45",
+   "Y": "3639.41",
+   "Z": "861"
+ },
+ {
+   "ID": "14",
+   "NAME": "Jorns Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "13,16",
+   "X": "1411.99",
+   "Y": "3639.41",
+   "Z": "869"
+ },
+ {
+   "ID": "15",
+   "NAME": "Kronshage Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "16",
+   "X": "1064.79",
+   "Y": "3743.52",
+   "Z": "861"
+ },
+ {
+   "ID": "16",
+   "NAME": "Leopold Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "10,14,15,16",
+   "X": "1225.9",
+   "Y": "3639.41",
+   "Z": "860"
+ },
+ {
+   "ID": "17",
+   "NAME": "Merit Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "9,18",
+   "X": "4739.64",
+   "Y": "1184.53",
+   "Z": "858"
+ },
+ {
+   "ID": "18",
+   "NAME": "Ogg Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "3,17,20,22",
+   "X": "4739.64",
+   "Y": "1184.53",
+   "Z": "868"
+ },
+ {
+   "ID": "19",
+   "NAME": "Phillips Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "12",
+   "X": "212.55",
+   "Y": "3852.78",
+   "Z": "862"
+ },
+ {
+   "ID": "20",
+   "NAME": "Sellery Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "11,18,26",
+   "X": "4739.64",
+   "Y": "1595.03",
+   "Z": "867"
+ },
+ {
+   "ID": "21",
+   "NAME": "Slichter Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "4,6,13,25",
+   "X": "1709.48",
+   "Y": "3516.31",
+   "Z": "869"
+ },
+ {
+   "ID": "22",
+   "NAME": "Smith Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "18",
+   "X": "4739.64",
+   "Y": "459.18",
+   "Z": "849"
+ },
+ {
+   "ID": "23",
+   "NAME": "Sullivan Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "8,10",
+   "X": "738.24",
+   "Y": "3550.54",
+   "Z": "863"
+ },
+ {
+   "ID": "24",
+   "NAME": "Tripp Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "1,6",
+   "X": "2026.37",
+   "Y": "3580.58",
+   "Z": "866"
+ },
+ {
+   "ID": "25",
+   "NAME": "Waters Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "4,21",
+   "X": "3126.26",
+   "Y": "3208.42",
+   "Z": "936"
+ },
+ {
+   "ID": "26",
+   "NAME": "Witte Residence Hall",
+   "DINING": "N",
+   "CONNECTIONS": "3,20",
+   "X": "5702.4",
+   "Y": "1595.03",
+   "Z": "856"
+ }
+]

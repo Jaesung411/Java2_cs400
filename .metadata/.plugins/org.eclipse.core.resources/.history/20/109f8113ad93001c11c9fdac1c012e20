@@ -1,0 +1,83 @@
+
+public class ROLETests {
+	
+	public static boolean test1() {
+		
+		Show show1 = new Show("American Dad!", 2005, 76/100, "Hulu");
+		Show show2 = new Show("Final Fantasy XIV: Dad of Light", 2017, 51/100, "Neflix");
+		Show show3 = new Show("Dad Stop Embarrassing Me!", 2021, 48/100, "Neflix");
+		Show show4 = new Show("Date My Dad", 2017, 42/100, "Prime Video");
+		Show show5 = new Show("Dinner with Dad", 2017, 36/100, "Hulu");
+		
+		Backend back = new Backend();
+		Frontend front = new Frontend(back);
+		
+		back.addShow(show1);
+		back.addShow(show2);
+		back.addShow(show3);
+		back.addShow(show4);
+		back.addShow(show5);
+		try {
+			front.runCommandLoop();
+		}catch(Exception ex) {
+			return false;
+		}
+		return true;
+	}
+
+	public static boolean test2() {
+		return false;
+	}
+
+	public static boolean test3() {
+		return false;
+	}
+
+	public static boolean test4() {
+		return false;
+	}
+
+	public static boolean test5() {
+		return false;
+	}
+
+	/**
+	 * test all of the tester methods
+	 * 
+	 * @return true if it works correctly
+	 */
+	public static boolean runAllTests() {
+		// check whether all the tests
+		if (test1() != true) {
+			System.out.println("Failed put and get method");
+			return false;
+		}
+		if (test2() != true) {
+			System.out.println("Failed collision");
+			return false;
+		}
+		if (test3() != true) {
+			System.out.println("Failed remove method");
+			return false;
+		}
+		if (test4() != true) {
+			System.out.println("Failed rehash");
+			return false;
+		}
+		if (test5() != true) {
+			System.out.println("Failed clear");
+			return false;
+		}
+
+		return true;
+	}
+	
+	/**
+	 * this method call the result of the runAllTests() method
+	 */
+	public static void main(String[] args) {
+
+		System.out.print(runAllTests());
+
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;streamings&apos; in &apos;Frontend.helperPrintFilter(...)&apos; to &apos;providers&apos;&#x0A;- Original project: &apos;Individual Role Code&apos;&#x0A;- Original element: &apos;Frontend.helperPrintFilter(String[]).streamings&apos;&#x0A;- Renamed element: &apos;streamings&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;streamings&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Frontend.java[Frontend~helperPrintFilter~\[QString;@streamings!5391!5409!5400!5409!\[QString;!0!true" name="providers" references="true" stamp="1645648330747" version="1.0"/>
+</session>

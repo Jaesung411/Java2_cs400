@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;AlgorithmEngineerAdditionTests&apos; to &apos;BackendDeveloperAdditionTests&apos;&#x0A;- Original project: &apos;P3Integration&apos;&#x0A;- Original element: &apos;AlgorithmEngineerAdditionTests&apos;&#x0A;- Renamed element: &apos;BackendDeveloperAdditionTests&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AlgorithmEngineerAdditionTests&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{AlgorithmEngineerAdditionTests.java[AlgorithmEngineerAdditionTests" matchStrategy="1" name="BackendDeveloperAdditionTests" qualified="false" references="true" similarDeclarations="false" stamp="1651620581885" textual="false" version="1.0"/>
+</session>

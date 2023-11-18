@@ -1,0 +1,60 @@
+
+public class Show implements IShow{
+
+	String title;
+	int year;
+	int rating;
+	String providers;
+	
+	// constructor args (String title, int year, int rating, String providers)
+    // where the providers string includes the names of every streaming source
+	public Show(String title, int year, int rating, String providers) {
+		this.title = title;
+		this.year = year;
+		this.rating = rating;
+		this.providers = providers;
+				
+	}
+	
+	@Override
+	public int compareTo(IShow o) {
+		if(this.rating < o.getRating()){
+			return this.rating - o.getRating();
+		}else if(this.rating > o.getRating()) {
+			return this.rating - o.getRating();
+		}else {
+			return 0;
+		}
+	}
+
+	// retrieve the title of this show object
+	@Override
+	public String getTitle() {
+		
+		return this.title;
+	}
+
+    // retrieve the year that this show was first produced
+	@Override
+	public int getYear() {
+		
+		return this.year;
+	}
+
+	// retrieve the Rotten Tomatoes Rating (out of 100)
+	@Override
+	public int getRating() {
+		
+		return this.rating;
+	}
+
+	// checks show availability
+	@Override
+	public boolean isAvailableOn(String provider) {
+		if(this.providers.equals(provider)) {
+			return true;
+		}
+		return false;
+	}
+
+}

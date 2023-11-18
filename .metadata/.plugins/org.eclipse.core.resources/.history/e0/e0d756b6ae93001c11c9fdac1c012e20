@@ -1,0 +1,247 @@
+import java.util.List;
+import java.util.Scanner;
+
+public class Frontend implements IShowSearcherFrontend{
+
+	IShowSearcherBackend back;
+	String word;
+	private static Scanner sc = new Scanner(System.in);
+	
+	// constructor args (IShowSearcherBackend) reads input from System.in
+	public Frontend (IShowSearcherBackend back) {
+		this.back = back;
+	}
+    // constructor args (String, IShowSearcherBackend) reads input from String
+	public Frontend (String word, IShowSearcherBackend back) {
+		this.back = back;
+		this.word = word;
+	}
+
+	/**
+     * This method drives the entire read, eval, print loop (repl) for the
+     * Song Search App.  This loop will continue to run until the user
+     * explicitly enters the quit command.
+     */
+	@Override
+	public void runCommandLoop() {
+		
+		System.out.println("Welcome to the Show Seracher App!");
+		System.out.println("==================================");
+		
+		String command;
+		
+		do{
+			displayCommandMenu();
+			System.out.print("Choose a command from the menu above: ");
+			command = sc.nextLine();
+			handleCommand(command);
+		}while(!(command.equals("q") || command.equals("Q") || command.equals("4")));
+		
+	}
+
+	 private void handleCommand(String command) {
+		 switch (command) {
+		 	case "1":
+		 	case "T":
+		 	case "t":
+		 		titleSearch();
+		    	break;
+		 	case "2":
+		 	case "Y":
+		 	case "y":
+		        yearSearch();
+		        break;
+		 	case "3":
+		 	case "F":
+		 	case "f":
+		    	
+			    break;
+		 	case "4":
+		 	case "Q":
+		 	case "q":
+		    	break;
+		    default:
+		    	System.out.println("Invalid Command!");
+		    	break;
+		 	}
+
+//		if(command.equals("1")||command.equals("t")||command.equals("T")) {
+//			
+//		}if(command.equals("2")||command.equals("y")||command.equals("Y")) {
+//			
+//		}if(command.equals("3")||command.equals("f")||command.equals("F")) {
+//			
+//		}if(command.equals("4")||command.equals("q")||command.equals("Q")) {
+//			
+//		}
+		
+	}
+	 
+	// to help make it easier to test the functionality of this program,
+    // the following helper methods will help support runCommandLoop():
+	
+	@Override
+	public void displayCommandMenu() {
+		 // prints command options to System.out
+	    System.out.println("Commands Menu:");
+	    System.out.println("\t 1) Serach by [T]itle Word");
+	    System.out.println("\t 2) Search by [Y]ear First Produced");
+	    System.out.println("\t 3) [F]ilter by Streaming Provider");
+	    System.out.println("\t 4) [Q]uit");
+		
+	}
+	 
+	// displays a list of shows
+	@Override
+	public void displayShows(List<IShow> shows) {
+		
+		//make the order in the list by the rotten tomatoes rating
+		for(int i = 0; i < shows.size(); i++) {
+			for(int j = i+1; j < shows.size(); j++) {
+				if(shows.get(i).compareTo(shows.get(j))<0){
+					IShow temp = shows.get(j);
+					shows.set(i, shows.get(j));
+					shows.set(j, temp);					
+				}
+			}
+		}
+		
+		//displays the list of shows
+		for( int k = 0; k < shows.size(); k++) {
+			
+			System.out.println(k+1 + ". " + shows.get(k).getTitle());
+			System.out.print("/t" + shows.get(k).getRating() + " " + "(" +shows.get(k).getYear() + ") " + "on: ");
+			System.out.println(displayStreaming(shows.get(k)));
+			
+		}
+		
+	}
+	
+	private String displayStreaming (IShow show) {
+		
+		String ret = "";
+		String[] streaming = {"Neflix","Hulu","Prime Video","Disney+"};
+		
+		for( String w :streaming) {
+			if(show.isAvailableOn(w)) {
+				ret += w +" ";
+			}
+		}
+		return ret;
+				
+	}
+	
+	// reads word from System.in, displays results
+	@Override
+	public void titleSearch() {
+		System.out.print("Choose a word that you would like to search for: ");
+		String s = sc.nextLine();
+		System.out.println("Found " + this.back.searchByTitleWord(s).size()+"/"+this.back.getNumberOfShows()+"matches");
+		displayShows(this.back.searchByTitleWord(s));
+	}
+
+	 // reads year from System.in, displays results
+	@Override
+	public void yearSearch() {
+		System.out.print("Choose a year that you would like to search for: ");
+		int s = sc.nextInt();
+		System.out.println("Found " + this.back.searchByYear(s).size()+"/"+this.back.getNumberOfShows()+"matches");
+		displayShows(this.back.searchByYear(s));
+	}
+
+	public void providerSearch() {
+		
+		String[] streamings = {"Neflix","Hulu","Prime Video","Disney+"};
+		
+		System.out.print("Providers that shows are being searched for:");
+		
+		for(String a : streamings) {
+			this.back.setProviderFilter(a, false);
+		}
+		
+		helperPrint(streamings);
+		
+		String filter;
+		do{
+			System.out.println("Choose the provider that you'd like to toggle the filter for: ");
+			filter = sc.nextLine();
+			handleFilter(filter);
+		}while(!(filter.equals("q") || filter.equals("Q") || filter.equals("5")));
+		
+		
+		
+	}
+	
+	private void helperPrint(String[] streamings) {
+		
+		String[] streamingN = {"[N]eflix","[H]ulu","[P]rime Video","[D]isney+"};
+		String x;
+		
+		for(int i = 0; i < streamingN.length; i++) {
+			if(this.back.getProviderFilter(streamings[i])) {
+				x = "x";
+			}else {
+				x = "_";
+			}
+			System.out.println("/t"+ i + 1 +") _" + x + "_ " + streamingN[i]);
+		}
+		
+	}
+	
+
+	 private void handleFilter(String filter) {
+		 switch (filter) {
+		 	case "1":
+		 	case "N":
+		 	case "n":
+		 		this.back.toggleProviderFilter("Netflix");
+		    	break;
+		 	case "2":
+		 	case "H":
+		 	case "h":
+		 		this.back.toggleProviderFilter("Hulu");
+		        break;
+		 	case "3":
+		 	case "P":
+		 	case "p":
+		 		this.back.toggleProviderFilter("Prime Video");
+			    break;
+		 	case "4":
+		 	case "D":
+		 	case "d":
+		 		this.back.toggleProviderFilter("Disney+");
+			    break;
+		 	case "5":
+		 	case "Q":
+		 	case "q":
+		    	break;
+		    default:
+		    	System.out.println("Invalid Command!");
+		    	break;
+		 	}
+		 }
+
+//		if(command.equals("1")||command.equals("t")||command.equals("T")) {
+//			
+//		}if(command.equals("2")||command.equals("y")||command.equals("Y")) {
+//			
+//		}if(command.equals("3")||command.equals("f")||command.equals("F")) {
+//			
+//		}if(command.equals("4")||command.equals("q")||command.equals("Q")) {
+//			
+//		}
+//	public static void main(String[] args) {
+//		
+//		Frontend frontend = new Frontend();
+//		Show show1 = new Show("American Dad!",2005, 76, "Hula");
+//		Show show2 = new Show("Final Fantasy XIV: Dad of Light",2017, 51, "Netflix");
+//		Show show3 = new Show("Dad Stop Embarrassing Me!",2021, 48, "Netflix");
+//		Show show4 = new Show("Date My Dad",2017, 42, "Prime Video");
+//		Show show5 = new Show("Dinner with Dad",2017, 36, "Hula");
+//		
+//		Show[] show = new Show[] {show1,show2,show3,show4,show5};
+//		List<IShow> showList = List.of(show1,show2,show3,show4,show5);
+//		frontend.displayShows(showList);
+//	}
+
+}
